@@ -1,0 +1,31 @@
+{{>layout/header}}
+	<body>
+		<div class="container">
+			<form class="mt-5 w-75">
+				<div class="form-check form-switch mb-3">
+					<input class="form-check-input" type="checkbox" role="switch" id="sale">
+					<label class="form-check-label" for="sale">판매 중</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="menuName" placeholder="아메리카노">
+					<label for="menuName">메뉴</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control" id="price" placeholder="1500">
+					<label for="price">가격</label>
+				</div>
+				<div class="form-floating mb-3">
+					 <select class="form-select" id="promotion" aria-label="Floating label select example">
+						<option selected >Choose...</option>
+						<option value="allTime">상시</option>
+						<option value="seasonLimit">시즌 한정</option>
+						<option value="regionalLimite">지역 한정</option>
+					</select>
+					<label for="promotion">프로모션</label>
+				</div>
+				<button type="button" class="btn btn-primary" id="regBtn">등록</button>
+			</form>
+		</div>
+	</body>
+	<script src="/js/menu.js"></script>
+{{>layout/footer}}
