@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 @NoArgsConstructor(access=AccessLevel.PROTECTED)
-public class Coffee {
+public class Menu {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,7 +42,7 @@ public class Coffee {
 	private LocalDateTime modDt;
 	
 	@Builder
-	public Coffee(String menuName, int price, String promo, boolean sale) {
+	public Menu(String menuName, int price, String promo, boolean sale) {
 		this.menuName = menuName;
 		this.price = price;
 		this.promotion = promo;

@@ -2,7 +2,7 @@ package irwin.mango.coffee.dto;
 
 import java.time.LocalDateTime;
 
-import irwin.mango.coffee.entity.Coffee;
+import irwin.mango.coffee.entity.Menu;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,7 +20,14 @@ public class MenuDto {
 	private LocalDateTime regDt;
 	private LocalDateTime modDt;
 	
-	public Coffee toEntity() {
-		return Coffee.builder().menuName(menuName).price(price).promo(promotion).sale(sale).build();
+	public Menu toEntity() {
+		return Menu.builder().menuName(menuName).price(price).promo(promotion).sale(sale).build();
+	}
+	
+	public MenuDto(Menu menu) {
+		this.menuName = menu.getMenuName();
+		this.price = menu.getPrice();
+		this.promotion = menu.getPromotion();
+		this.sale = menu.isSale();
 	}
 }
