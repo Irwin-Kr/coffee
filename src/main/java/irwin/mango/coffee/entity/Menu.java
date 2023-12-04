@@ -1,10 +1,8 @@
 package irwin.mango.coffee.entity;
 
-import java.time.LocalDateTime;
-
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-
+import irwin.mango.coffee.cover.PromotionConverter;
+import irwin.mango.coffee.entity.comman.Common;
+import irwin.mango.coffee.enumeration.Promotion;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -14,12 +12,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 @NoArgsConstructor(access=AccessLevel.PROTECTED)
-public class Menu {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id", updatable=false)
-	private Long id;
+public class Menu extends Common{
 	
 	@Column(name="menuName", nullable=false)
 	private String menuName;
@@ -28,28 +21,26 @@ public class Menu {
 	private int price;
 	
 	@Column(name="promotion", nullable=false)
-	private String promotion;
+	@Convert(converter = PromotionConverter.class)
+	private Promotion promotion;
 	
 	@Column(name="sale", nullable=false)
 	private boolean sale;
 	
-	@CreatedDate
-	@Column(name="regDt")
-	private LocalDateTime regDt;
-	
-	@LastModifiedDate
-	@Column(name="modDt")
-	private LocalDateTime modDt;
+	@ManyToOne
+	@JoinColumn(name="brand_id", insertable=false, updatable=false)
+	private Brand brand;
 	
 	@Builder
-	public Menu(String menuName, int price, String promo, boolean sale) {
+	public Menu(String menuName, int price, Promotion promo, boolean sale, Brand brand) {
 		this.menuName = menuName;
 		this.price = price;
 		this.promotion = promo;
 		this.sale = sale;
+		this.brand = brand;
 	}
 	
-	public void update(int price, String promo, boolean sale) {
+	public void update(int price, Promotion promo, boolean sale) {
 		this.price = price;
 		this.promotion = promo;
 		this.sale = sale;

@@ -3,12 +3,14 @@ package irwin.mango.coffee.entity;
 import irwin.mango.coffee.entity.comman.Common;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Brand extends Common{
 	
