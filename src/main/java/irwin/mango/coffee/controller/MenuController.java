@@ -2,10 +2,8 @@ package irwin.mango.coffee.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,9 +16,7 @@ import irwin.mango.coffee.Service.MenuService;
 import irwin.mango.coffee.dto.MenuDto;
 import irwin.mango.coffee.entity.Menu;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @RequiredArgsConstructor
 @RestController
 public class MenuController {
@@ -32,8 +28,6 @@ public class MenuController {
 	public ResponseEntity<Menu> createMenu(@RequestBody MenuDto dto) {
 		
 		Menu coffee = menuService.save(dto);
-		
-		log.info("INSERT <<"+"menuName : {}, price : {}, prmo : {}, sale : {}", dto.getMenuName(), dto.getPrice(), dto.getPromotion(), dto.isSale());
 		
 		return ResponseEntity.status(HttpStatus.CREATED).body(coffee);
 	}

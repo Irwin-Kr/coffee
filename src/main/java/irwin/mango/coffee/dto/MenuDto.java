@@ -17,9 +17,9 @@ import lombok.ToString;
 public class MenuDto {
 	private String menuName;
 	private int price;
+	private Brand brand;
 	private Promotion promotion;
 	private boolean sale;
-	private Brand brand;
 	private LocalDateTime regDt;
 	private LocalDateTime modDt;
 	

@@ -10,9 +10,7 @@ import irwin.mango.coffee.Service.BrandService;
 import irwin.mango.coffee.dto.BrandDto;
 import irwin.mango.coffee.entity.Brand;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @RestController
 @RequiredArgsConstructor
 public class BrandController {

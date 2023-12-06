@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import irwin.mango.coffee.dto.BrandDto;
 import irwin.mango.coffee.entity.Brand;
 import irwin.mango.coffee.repository.BrandRepository;
-import irwin.mango.coffee.repository.MenuRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -18,7 +17,6 @@ public class BrandService {
 	
 	// 삽입
 	public Brand save(BrandDto dto) {
-
 		return brandRepo.save(dto.toEntity());
 	}
 	

@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor(access=AccessLevel.PROTECTED)
 public class Menu extends Common{
-	
+
 	@Column(name="menuName", nullable=false)
 	private String menuName;
 	
@@ -27,8 +27,8 @@ public class Menu extends Common{
 	@Column(name="sale", nullable=false)
 	private boolean sale;
 	
-	@ManyToOne
-	@JoinColumn(name="brand_id", insertable=false, updatable=false)
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="brand_id")
 	private Brand brand;
 	
 	@Builder
@@ -38,6 +38,10 @@ public class Menu extends Common{
 		this.promotion = promo;
 		this.sale = sale;
 		this.brand = brand;
+		if(!brand.getMenus().contains(this)) {
+			brand.getMenus().add(this);
+		}
+		
 	}
 	
 	public void update(int price, Promotion promo, boolean sale) {
