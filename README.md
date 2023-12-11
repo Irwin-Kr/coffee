@@ -7,3 +7,5 @@
 #### ** 커피 브랜드 페이지 API 구현, 메인페이지 구성 필요 <br></br>
 ### * [Day02](https://github.com/Irwin-Kr/coffee/tree/Day02) - 23. 12. 03
 #### ** Menu, Brand Entity 구성 진행 <br></br>
+### * [Day03](https://github.com/Irwin-Kr/coffee/tree/Day02) - 23. 12. 12
+#### ** Menu, Brand Entity Jpa 연관관계 구성 <br></br>
