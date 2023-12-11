@@ -8,17 +8,18 @@ import irwin.mango.coffee.enumeration.Promotion;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@ToString
+@Setter
 public class MenuDto {
+	private Long id;
 	private String menuName;
 	private int price;
-	private Brand brand;
 	private Promotion promotion;
+	private Brand brand;
 	private boolean sale;
 	private LocalDateTime regDt;
 	private LocalDateTime modDt;
@@ -33,4 +34,6 @@ public class MenuDto {
 		this.promotion = menu.getPromotion();
 		this.sale = menu.isSale();
 	}
+	
+
 }

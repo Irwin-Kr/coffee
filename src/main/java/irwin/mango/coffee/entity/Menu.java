@@ -27,26 +27,28 @@ public class Menu extends Common{
 	@Column(name="sale", nullable=false)
 	private boolean sale;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="brand_id")
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="brand_id", referencedColumnName="id")
 	private Brand brand;
-	
+
 	@Builder
 	public Menu(String menuName, int price, Promotion promo, boolean sale, Brand brand) {
 		this.menuName = menuName;
 		this.price = price;
 		this.promotion = promo;
 		this.sale = sale;
-		this.brand = brand;
-		if(!brand.getMenus().contains(this)) {
-			brand.getMenus().add(this);
-		}
-		
-	}
+		this.brand = this.setBrand(brand);
+ 	}
 	
 	public void update(int price, Promotion promo, boolean sale) {
 		this.price = price;
 		this.promotion = promo;
 		this.sale = sale;
+	}
+	public Brand setBrand(Brand brand) {
+		this.brand=brand;
+		brand.getMenus().add(this);
+		
+		return brand;
 	}
 }

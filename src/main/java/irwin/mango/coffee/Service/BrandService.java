@@ -30,6 +30,10 @@ public class BrandService {
 		
 		return brandRepo.findById(id).orElse(null);
 	}
+
+	public Brand findName(String name){
+		return brandRepo.findByName(name).orElse(null);
+	}
 	
 	// 브랜드 수정
 	public Brand update(Long id, BrandDto dto) {

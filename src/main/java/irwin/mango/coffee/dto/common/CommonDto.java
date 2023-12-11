@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 public class CommonDto {
 
-	protected String id;
+	protected Long id;
 	protected LocalDateTime regDt;
 	protected LocalDateTime modDt;
 	

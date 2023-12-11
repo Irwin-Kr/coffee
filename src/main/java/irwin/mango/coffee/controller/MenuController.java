@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import irwin.mango.coffee.Service.MenuService;
 import irwin.mango.coffee.dto.MenuDto;
 import irwin.mango.coffee.entity.Menu;
@@ -27,9 +26,9 @@ public class MenuController {
 	@PostMapping("/api/menu/create")
 	public ResponseEntity<Menu> createMenu(@RequestBody MenuDto dto) {
 		
-		Menu coffee = menuService.save(dto);
-		
-		return ResponseEntity.status(HttpStatus.CREATED).body(coffee);
+		Menu menu = menuService.save(dto);
+
+		return ResponseEntity.status(HttpStatus.CREATED).body(menu);
 	}
 	
 	// GET

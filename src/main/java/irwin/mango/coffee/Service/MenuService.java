@@ -4,22 +4,22 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import irwin.mango.coffee.dto.BrandDto;
 import irwin.mango.coffee.dto.MenuDto;
+import irwin.mango.coffee.entity.Brand;
 import irwin.mango.coffee.entity.Menu;
 import irwin.mango.coffee.repository.MenuRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @RequiredArgsConstructor
 @Service
 public class MenuService {
 	
 	private final MenuRepository menuRepo;
 	
+	
 	// 메뉴 삽입
 	public Menu save(MenuDto dto) {
-		log.info("INSERT <<"+"menuName : {}, price : {}, prmo : {}, sale : {}, brand : {}", dto.getMenuName(), dto.getPrice(), dto.getPromotion(), dto.isSale(), dto.getBrand());
 		return menuRepo.save(dto.toEntity());
 	}
 	
@@ -48,7 +48,13 @@ public class MenuService {
 		menu.update(dto.getPrice(), dto.getPromotion(), dto.isSale());
 		
 		return menu;
+	}
+	
+	public Menu brandJoin(Long id, MenuDto dto) {
+		Menu menu = menuRepo.findById(id).orElse(null);
 		
+		menu.setBrand(dto.getBrand());
+		return menu;
 	}
 
 }
