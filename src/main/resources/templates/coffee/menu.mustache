@@ -1,19 +1,24 @@
 {{>layout/header}}
 	<body>
-		<div class="container">
-			<form class="mt-5 w-75">
+		<div class="container" style="max-width: 750px;">
+			<form class="mt-5">
+				<h4>메뉴 추가하기</h4>
+				<hr class="mb-5" style="border: solid 2px;" />
 				<div class="form-check form-switch mb-3">
 					<input class="form-check-input" type="checkbox" role="switch" id="sale">
 					<label class="form-check-label" for="sale">판매 중</label>
 				</div>
+				
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="menuName" placeholder="아메리카노">
 					<label for="menuName">메뉴</label>
 				</div>
+				
 				<div class="form-floating mb-3">
 					<input type="text" class="form-control" id="price" placeholder="1500">
 					<label for="price">가격</label>
 				</div>
+				
 				<div class="form-floating mb-3">
 					 <select class="form-select" id="promotion" aria-label="Floating label select example">
 						<option selected >Choose...</option>
@@ -22,6 +27,33 @@
 						<option value="regionalLimite">지역 한정</option>
 					</select>
 					<label for="promotion">프로모션</label>
+				</div>
+				
+				<div class="row mb-3">
+					<div class="col-8">
+						<div class="form-floating">
+							<select class="form-select" id="Brand" aria-label="Floating label select example">
+								<option selected>Open this select menu</option>
+								{{#brandList}}
+								<option value="{{id}}">{{name}}</option>
+								{{/brandList}}
+							</select>
+							<label for="Brand">브랜드</label>
+						</div>
+					</div>
+					<div class="col-4 mt-2">
+						<button type="button" class="btn btn-success" id="brandBtn">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+								<path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+							</svg>
+							추가
+						</button>
+					</div>
+				</div>
+				
+				<div class="mb-3">
+					<label for="image" class="form-label">이미지</label>
+					<input class="form-control" type="file" id="image" multiple>
 				</div>
 				
 				<button type="button" class="btn btn-primary" id="regBtn">등록</button>

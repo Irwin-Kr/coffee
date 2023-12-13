@@ -19,7 +19,7 @@ public class BrandController {
 	
 	private final BrandService brandService;
 	
-	@PostMapping("/api/brand/crate")
+	@PostMapping("/api/brand/create")
 	public ResponseEntity<Brand> createBrand(@RequestBody BrandDto dto){
 		Brand brand = brandService.save(dto);
 		

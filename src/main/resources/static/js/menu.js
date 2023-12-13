@@ -18,3 +18,11 @@ if(regist){
 		})
 	});	
 }
+
+const brandBtn = document.getElementById("brandBtn");
+
+if(brandBtn){
+	brandBtn.addEventListener("click", function(){
+		window.open(`/newBrand`, '_blank', 'width=540, height=540');
+	});
+}

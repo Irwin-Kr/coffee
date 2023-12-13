@@ -11,18 +11,12 @@ import irwin.mango.coffee.entity.Brand;
 import lombok.RequiredArgsConstructor;
 
 @Controller
-@RequiredArgsConstructor
-public class MenuViewController {
+public class BrandViewController {
 	
-	private final BrandService brandService;
-	
-	@GetMapping("/newMenu")
+	@GetMapping("/newBrand")
 	public String newMenu(Model model) {
 		
-		List<Brand> brandList = brandService.findAll();
-		model.addAttribute("brandList", brandList);
-		
-		return "coffee/menu";
+		return "coffee/brand";
 	}
 
 }
