@@ -10,6 +10,6 @@
 ### * [Day03](https://github.com/Irwin-Kr/coffee/tree/Day03) - 23. 12. 12
 #### ** Menu, Brand Entity Jpa 연관관계 구성 <br></br>
 ### * [Day04](https://github.com/Irwin-Kr/coffee/tree/Day04) - 23. 12. 12
-#### ** Menu, Brand Entity Jpa 연관관계 구성 <br></br>
+#### ** 브랜드 추가 버튼 및 팝업창, 카테고리 구성 <br></br>
 ### * [Day05](https://github.com/Irwin-Kr/coffee/tree/Day05) - 23. 12. 12
-#### ** Category, newBrand페이지의 js 변경 <br></br>
+#### ** Category 구성, newBrand페이지의 js 변경 <br></br>
