@@ -22,6 +22,7 @@ function brandReg(){
 			 name: document.getElementById("name").value,
 			}),
 		}).then(() => {
-			alert("전송 완료");
+			window.close();
+			window.opener.parent.location.reload();
 		})
 }

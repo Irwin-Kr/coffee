@@ -11,7 +11,11 @@ if(regist){
 				sale: document.getElementById("sale").checked,
 				menuName: document.getElementById("menuName").value,
 				price: document.getElementById("price").value,
-				promotion: document.getElementById("promotion").value
+				promotion: document.getElementById("promotion").value,
+				brand: {
+					id: document.getElementById("brandId").value,
+					name: document.getElementById("brandId").innerText
+				}
 			}),
 		}).then(() => {
 			alert("전송 완료");
